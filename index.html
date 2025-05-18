@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulces d' Santander</title>
+    <meta name="author" content="malexander98">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="resources/icon_app.webp">
+</head>
+
+<body>
+
+    <!-- Carrito -->
+    <div class="cart_container">
+        <img src="resources/cart.webp" class="cart_img" onclick="aparecer_compra()">
+        <p class="contador_cart"></p>
+    </div>
+
+    <section class="window_carrito">
+        <div class="window_carrito_top">
+            <div class="window_carrito_head">
+                <h2>Compra</h2>
+                <p onclick="ocultar_compra()">x</p>
+            </div>
+            <div class="window_carrito_table">
+                <h3>Imagen</h3>
+                <h3>Precio</h3>
+            </div>
+        </div>
+        <div class="window_carrito_footer">
+            <div>
+                <h2>Total</h2>
+                <p class="total_a_pagar"></p>
+            </div>
+            <a onclick="enviar_pedido()">Enviar</a>
+        </div>
+    </section>
+
+    <section class="control_peticion">
+        <div class="container_revisar">
+            <h2>Hola</h2>
+            <img src="resources/social3.webp">
+            <p class="peticion_text">Su peticion se enviará a WhatsApp para que solo tenga que enviar el mensaje
+                generado por JavaScript.
+                Confirme su envío.<br><span class="letra_rojo">Direccion: Calle América frente al Alfarero #
+                    115</span></p>
+            <input type="date" class="date input">
+            <div class="peticion_domicilio">
+                <input type="checkbox" class="peticion_checkbox input" onclick="mostrar_direccion(event)">
+                <p>Seleccionar para domicilio + $250.00</p>
+            </div>
+            <input type="text" placeholder="Ingrese dirección" class="peticion_direccion input">
+            <div class="control_peticion_footer">
+                <a onclick="envio_whatsapp(event)">Enviar</a>
+                <a onclick="desaparecer_control()">Cancelar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Window principal  -->
+    <section class="window_princ">
+
+        <!-- Navbar  -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="resources/icon_app.webp" alt="logo" width="500px">
+                <h2>D. d' Santander</h2>
+            </div>
+            <ul class="navbar_options">
+                <li><a href="#dispensa" onclick="oculto_navbar()">Dispensa</a></li>
+                <li><a href="#footer" onclick="oculto_navbar()">Admin</a></li>
+            </ul>
+            <div class="hamburguer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <main>
+
+            <!-- Presentacion -->
+            <section class="presentation">
+                <div class="grajea_cont">
+                    <span class="grajea"></span>
+                    <span class="grajea"></span>
+                    <span class="grajea"></span>
+                    <span class="grajea"></span>
+                    <span class="grajea"></span>
+                </div>
+                <div class="presentation_izq">
+                    <img src="resources/icon_app.webp">
+                </div>
+                <div class="presentation_der">
+                    <h1>Dulces d' <br> Santander</h1>
+                    <div class="home_promo">
+                        <h3 class="promo_1">Lo <span class="span_1">mejor</span></h3>
+                        <h3 class="promo_2">y de <span class="span_2">calidad</span></h3>
+                    </div>
+                    <p>Los mejores flanes y dulces de repostería criolla adornado con los más exquisitos acompañantes y
+                        decoraciones las puedes ver en un solo lugar. Mire nuestro menú y reserve todo desde la
+                        comodidad de
+                        su casa.</p>
+                </div>
+            </section>
+
+            <!-- Dispensa 1  -->
+            <section class="dispensa" id="dispensa">
+                <h3>Ha llegado el momento de presentarle la dispensa de productos variados y de exquisita preferencia
+                    para
+                    todos los gustos</h3>
+                <div class="dispensa_section">
+                    <div class="dispensa_section_der">
+                        <h2>DISPENSA DE FLANES</h2>
+                        <p>El preferido y más variado de la casa … aquí esta la especialidad de la casa con flanes de
+                            diferentes estilos y decoraciones. Si quiere volverse adicto de un Flan es esta la dispensa
+                            que
+                            debe mirar</p>
+                    </div>
+                    <div class="dispensa_section_izq" onclick="mostrar_dispensa_1()">
+                        <img src="resources/flan_1.webp">
+                        <img src="resources/flan_2.webp">
+                        <img src="resources/flan_3.webp">
+                        <a>+</a>
+                    </div>
+                </div>
+
+                <!-- Dispensa 2  -->
+                <div class="dispensa_section">
+                    <div class="dispensa_section_izq" onclick="mostrar_dispensa_2()">
+                        <img src="resources/pastel_1.webp">
+                        <img src="resources/pastel_2.webp">
+                        <img src="resources/pastel_3.webp">
+                        <a>+</a>
+                    </div>
+                    <div class="dispensa_section_der">
+                        <h2>DISPENSA DE PASTELES</h2>
+                        <p>Esto es sin duda una total delicia … el mejor regalo que pudieras recibir es alguno de estos
+                            pasteles que disponen de los mejores recursos para su elaboración. Solo mire y pida su
+                            preferido.</p>
+                    </div>
+                </div>
+
+                <!-- Dispensa 3  -->
+                <div class="dispensa_section">
+                    <div class="dispensa_section_der">
+                        <h2>DISPENSA PARA OTROS</h2>
+                        <p>Por si fuera poco, tanta variedad… aquí les presento una dispensa donde de igual forma se
+                            deleitará con la calidad de producto que puede ver. Solo faltaría q la compre y deje su
+                            experiencia.</p>
+                    </div>
+                    <div class="dispensa_section_izq" onclick="mostrar_dispensa_3()">
+                        <img src="resources/otros_1.webp">
+                        <img src="resources/otros_2.webp">
+                        <img src="resources/otros_5.webp">
+                        <a>+</a>
+                    </div>
+                </div>
+            </section>
+    </section>
+
+    <!-- Window Flanes  -->
+
+    <section class="window_flanes">
+        <!-- Navbar  -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="resources/icon_app.webp" alt="logo" width="500px">
+                <h2>D. d' Santander</h2>
+            </div>
+            <ul class="navbar_options_flanes">
+                <li><a onclick="mostrar_home()">Home</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <!-- Presentacion -->
+            <section class="presentation_flanes">
+                <div class="presentation_der_flanes">
+                    <h1>Dispensa de flanes</h1>
+                    <div class="home_promo">
+                        <h3 class="promo_1">Lo <span class="span_1">mejor</span></h3>
+                        <h3 class="promo_2">y de <span class="span_2">calidad</span></h3>
+                    </div>
+                </div>
+                <div class="presentation_izq_flanes">
+                    <img src="resources/flan_2.webp">
+                </div>
+            </section>
+
+            <!-- Presentacion -->
+            <section class="dispensa_prod">
+            </section>
+
+        </main>
+    </section>
+
+    <!-- Window Pasteles  -->
+
+    <section class="window_pasteles">
+        <!-- Navbar  -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="resources/icon_app.webp" alt="logo" width="500px">
+                <h2>D. d' Santander</h2>
+            </div>
+            <ul class="navbar_options_flanes">
+                <li><a onclick="mostrar_home()">Home</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <!-- Presentacion -->
+            <section class="presentation_flanes">
+                <div class="presentation_der_flanes">
+                    <h1>Dispensa de pasteles</h1>
+                    <div class="home_promo">
+                        <h3 class="promo_1">Lo <span class="span_1">mejor</span></h3>
+                        <h3 class="promo_2">y de <span class="span_2">calidad</span></h3>
+                    </div>
+                </div>
+                <div class="presentation_izq_flanes">
+                    <img src="resources/pastel_2.webp">
+                </div>
+            </section>
+
+            <!-- Dispensa -->
+            <section class="dispensa_prod_pasteles">
+            </section>
+
+        </main>
+    </section>
+
+    <!-- Window Otros  -->
+
+    <section class="window_otros">
+        <!-- Navbar  -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="resources/icon_app.webp" alt="logo" width="500px">
+                <h2>D. d' Santander</h2>
+            </div>
+            <ul class="navbar_options_flanes">
+                <li><a onclick="mostrar_home()">Home</a></li>
+            </ul>
+        </nav>
+
+        <main>
+
+            <!-- Presentacion -->
+            <section class="presentation_flanes">
+                <div class="presentation_der_flanes">
+                    <h1>Dispensa de otros</h1>
+                    <div class="home_promo">
+                        <h3 class="promo_1">Lo <span class="span_1">mejor</span></h3>
+                        <h3 class="promo_2">y de <span class="span_2">calidad</span></h3>
+                    </div>
+                </div>
+                <div class="presentation_izq_flanes">
+                    <img src="resources/otros_2.webp">
+                </div>
+            </section>
+
+            <!-- Dispensa -->
+            <section class="dispensa_prod_otros">
+            </section>
+
+        </main>
+    </section>
+
+    </main>
+
+    <footer id="footer">
+        <div class="footer_izq">
+            <h3>Creado y mantenido por Malex_Dev</h3>
+            <p>Sígueme en mis redes sociales</p>
+        </div>
+        <div class="redes_sociales">
+            <div class="social social_1">
+                <img src="resources/social1.webp">
+                <a href="https://www.facebook.com/share/15ppeahJV8/">Seguir</a>
+            </div>
+            <div class="social social_2">
+                <img src="resources/social2.webp">
+                <a
+                    href="https://www.instagram.com/miguelalexander241298?utm_source=qr&igsh=MzNlNGNkZWQ4Mg%3D%3D">Seguir</a>
+            </div>
+            <div class="social social_3">
+                <img src="resources/social3.webp">
+                <a href="https://wa.me/qr/35IGXS5EXZARD1">Seguir</a>
+            </div>
+        </div>
+    </footer>
+
+    <!--Archivo javascript-->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
