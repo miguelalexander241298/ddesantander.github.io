@@ -114,7 +114,37 @@ function agrego_items([foto, precio, id, nombre]) {
                 <p class="importe_parcial">${precio}</p>
                 <button id='${id}' onclick="elimino_item(event)">Cancelar</button>
             </div>`
+    agrego_info_ok('Añadido al carrito')
     return nombreApp
+}
+
+/* Constructor de contenedor informativo */
+function agrego_info(texto) {
+    let nombreApp = document.createElement('section');
+    nombreApp.className = `informativo`
+    nombreApp.innerHTML = `
+            <div class="informativo_div">
+                <p class="informativo_text">${texto}</p>
+            </div>`
+    document.body.appendChild(nombreApp)
+    document.querySelector('.informativo_text').textContent = texto
+    setTimeout(() => {
+        document.body.removeChild(nombreApp)
+    }, 4000);
+}
+
+function agrego_info_ok(texto) {
+    let nombreApp = document.createElement('section');
+    nombreApp.className = `informativo`
+    nombreApp.innerHTML = `
+            <div class="informativo_div informativo_div_ok">
+                <p class="informativo_text informativo_text_ok">${texto}</p>
+            </div>`
+    document.body.appendChild(nombreApp)
+    document.querySelector('.informativo_text').textContent = texto
+    setTimeout(() => {
+        document.body.removeChild(nombreApp)
+    }, 4000);
 }
 
 const cart_container = document.querySelector('.cart_container')
@@ -203,14 +233,14 @@ function const_whatsapp(pedido, dia, direccion) {
     }
 }
 
-function envio_whatsapp(event) {
+function envio_whatsapp() {
     const domicilio = 'Con domicilio'
     const peticion_fecha = document.querySelector('.date').value.replaceAll('-', '%2D')
     const direccion = document.querySelector('.peticion_direccion').value
     const items = document.querySelectorAll('.cont_compra')
 
     if (peticion_fecha == '') {
-        alert('Ingrese la fecha para su pedido')
+        agrego_info('Ingrese la fecha para su pedido')
     } else {
         let pedidos = ''
         items.forEach(element => {
@@ -218,15 +248,15 @@ function envio_whatsapp(event) {
         });
         if (peticion_direccion.style.display === 'inline') {
             if (direccion == '') {
-                alert('Inserte la direccion')
+                agrego_info('Inserte la direccion')
             } else {
                 let const_fecha = `${domicilio} a ${direccion}`.replaceAll(' ', '%20').replaceAll('#', '%23').replaceAll('.', '%2E')
                 const referencia = const_whatsapp(pedidos, peticion_fecha, const_fecha)
-                event.target.href = referencia
+                open(referencia)
             }
         } else {
             const referencia = const_whatsapp(pedidos, peticion_fecha, '')
-            event.target.href = referencia
+            open(referencia)
         }
     }
 }
