@@ -250,7 +250,7 @@ function envio_whatsapp() {
             if (direccion == '') {
                 agrego_info('Inserte la direccion')
             } else {
-                let const_fecha = `${domicilio} a ${direccion}`.replaceAll(' ', '%20').replaceAll('#', '%23').replaceAll('.', '%2E')
+                let const_fecha = `${direccion}`.replaceAll(' ', '%20').replaceAll('#', '%23').replaceAll('.', '%2E')
                 const referencia = const_whatsapp(pedidos, peticion_fecha, const_fecha)
                 open(referencia)
             }
