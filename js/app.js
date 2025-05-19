@@ -235,7 +235,7 @@ function const_whatsapp(pedido, dia, direccion) {
 
 function envio_whatsapp() {
     const domicilio = 'Con domicilio'
-    const peticion_fecha = document.querySelector('.date').value.replaceAll('-', '%2D')
+    const peticion_fecha = document.querySelector('.date').value.replaceAll('-', '%2D').replaceAll('/', '%2F').replaceAll(' ', '%20').replaceAll('.', '%2E')
     const direccion = document.querySelector('.peticion_direccion').value
     const items = document.querySelectorAll('.cont_compra')
 
